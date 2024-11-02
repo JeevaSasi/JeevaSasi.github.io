@@ -37,6 +37,12 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!-- Carousel  -->
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    	<link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+		<link rel="stylesheet" href="./assets/css/style.css">
   </head>
 
   <body class="index-page">
@@ -299,14 +305,14 @@
             <div class="col-lg-6">
               <div class="progress">
                 <span class="skill"
-                  ><span>Native Android (Kotlin/Java)</span>
-                  <i class="val">99%</i></span
+                  ><span>Android Application Development</span>
+                  <i class="val">95%</i></span
                 >
                 <div class="progress-bar-wrap">
                   <div
                     class="progress-bar"
                     role="progressbar"
-                    aria-valuenow="100"
+                    aria-valuenow="95"
                     aria-valuemin="0"
                     aria-valuemax="100"
                   ></div>
@@ -316,7 +322,8 @@
 
               <div class="progress">
                 <span class="skill"
-                  ><span>HtML/CSS</span> <i class="val">90%</i></span
+                  ><span>Web Application Development</span>
+                  <i class="val">90%</i></span
                 >
                 <div class="progress-bar-wrap">
                   <div
@@ -332,13 +339,16 @@
 
               <div class="progress">
                 <span class="skill"
-                  ><span>JavaScript</span> <i class="val">80%</i></span
+                  ><span
+                    >Hybrid Mobile Application Development (Android & iOS)</span
+                  >
+                  <i class="val">80%</i></span
                 >
                 <div class="progress-bar-wrap">
                   <div
                     class="progress-bar"
                     role="progressbar"
-                    aria-valuenow="75"
+                    aria-valuenow="80"
                     aria-valuemin="0"
                     aria-valuemax="100"
                   ></div>
@@ -350,7 +360,8 @@
             <div class="col-lg-6">
               <div class="progress">
                 <span class="skill"
-                  ><span>PHP API Development</span> <i class="val">80%</i></span
+                  ><span>ERP Application Devlopment</span>
+                  <i class="val">80%</i></span
                 >
                 <div class="progress-bar-wrap">
                   <div
@@ -366,14 +377,14 @@
 
               <div class="progress">
                 <span class="skill"
-                  ><span>Flutter &amp; Dart/React Native</span>
-                  <i class="val">60%</i></span
+                  ><span>UI/UX & Graphic Designing</span>
+                  <i class="val">80%</i></span
                 >
                 <div class="progress-bar-wrap">
                   <div
                     class="progress-bar"
                     role="progressbar"
-                    aria-valuenow="90"
+                    aria-valuenow="80"
                     aria-valuemin="0"
                     aria-valuemax="100"
                   ></div>
@@ -383,14 +394,13 @@
 
               <div class="progress">
                 <span class="skill"
-                  ><span>Graphic Designing (Canva,Figma)</span>
-                  <i class="val">70%</i></span
+                  ><span>Digital Marketing</span> <i class="val">70%</i></span
                 >
                 <div class="progress-bar-wrap">
                   <div
                     class="progress-bar"
                     role="progressbar"
-                    aria-valuenow="55"
+                    aria-valuenow="70"
                     aria-valuemin="0"
                     aria-valuemax="100"
                   ></div>
@@ -535,7 +545,7 @@
       <section id="portfolio" class="portfolio section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>App Screenshots</h2>
+          <h2>Portfolio</h2>
           <!-- <p>
             Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
             aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
@@ -551,46 +561,62 @@
             data-default-filter="*"
             data-layout="masonry"
             data-sort="original-order"
-          >
-            <ul
-              class="portfolio-filters isotope-filters"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Android</li>
-              <li data-filter=".filter-product">IOS</li>
-              <li data-filter=".filter-branding">Web</li>
-            </ul>
-
-            <div style="background-color: lightslategray;" >
-              <img src="assets/img/7.jpg" width="24%" height="45%" style="margin: 2px;" />
-              <img src="assets/img/8.jpg" width="24%" height="45%" style="margin: 2px;padding-top: 10%;" />
-              <img src="assets/img/9.jpg" width="24%" height="45%" style="margin: 2px;" />
-              <img src="assets/img/10.jpg" width="24%" height="45%" style="margin: 2px;padding-top: 10%;" />
+          ></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="featured-carousel owl-carousel">
+                    <div class="item">
+                      <div class="work-wrap d-md-flex">
+                        <div class="img order-md-last">
+                          <img src="./assets/img/2.jpg" height="100%"/>
+                        </div>                        <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center">
+                          <div class="desc w-100">
+                            <h2 class="mb-4 ">Define <br> Your Budget</h2>
+                            <p class="h5">Call: 0123 456 78901</p>
+                            <p class="h5 mb-4">Email Address: email@info.com</p>
+                            <div class="row justify-content-end">
+                              <div class="col-xl-8">
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                              </div>
+                            </div>
+                            <p>
+                              <button type="button" class="btn btn-dark mb-2 py-3 px-4">Shop the collection Outline</button>
+                              <button type="button" class="btn btn-dark mb-2 py-3 px-4">Learn More</button>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="work-wrap d-md-flex">
+                        <div class="img order-md-last">
+                          <img src="./assets/img/8.jpg" height="100%"/>
+                        </div>
+                        <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center">
+                          <div class="py-md-5">
+                            <h2 class="mb-4">Kids <br> Collection</h2>
+                            <p class="h5">Call: 0123 456 78901</p>
+                            <p class="h5 mb-4">Email Address: email@info.com</p>
+                            <div class="row justify-content-end">
+                              <div class="col-xl-8">
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                              </div>
+                            </div>
+                            <p>
+                              <button type="button" class="btn btn-dark  mb-2 py-3 px-4">Shop the collection Outline</button>
+                              <button type="button" class="btn btn-dark mb-2 py-3 px-4">Learn More</button>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div style="background-color: lightcoral;">
-              <img src="assets/img/6.jpg" width="24%" height="45%" style="margin: 2px;"/>
-              <img src="assets/img/5.jpg" width="24%" height="45%" style="margin: 2px;padding-top: 5%;" />
-              <img src="assets/img/4.jpg" width="24%" height="45%" style="margin: 2px;" />
-              <img src="assets/img/2.jpg" width="24%" height="45%" style="margin: 2px;padding-top: 5%;" />
-            </div>
-
-            <div style="background-color: burlywood;">
-              <img src="assets/img/21.jpg" width="24%" height="45%" style="margin: 2px;"/>
-              <img src="assets/img/22.jpg" width="24%" height="45%" style="margin: 2px;padding-top: 5%;" />
-              <img src="assets/img/23.jpg" width="24%" height="45%" style="margin: 2px;" />
-              <img src="assets/img/24.jpg" width="24%" height="45%" style="margin: 2px;padding-top: 5%;" />
-            </div>
-
-            <div style="background-color: lightslategrey;">
-              <img src="assets/img/29.jpg" width="24%" height="45%" style="margin: 2px;"/>
-              <img src="assets/img/28.jpg" width="24%" height="45%" style="margin: 2px;padding-top: 5%;" />
-              <img src="assets/img/25.png" width="24%" height="45%" style="margin: 2px;" />
-              <img src="assets/img/27.jpg" width="24%" height="45%" style="margin: 2px;padding-top: 5%;" />
-            </div>
-          </div>
         </div>
       </section>
       <!-- /Portfolio Section -->
@@ -1078,5 +1104,11 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/main2.js"></script>
   </body>
 </html>
