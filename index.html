@@ -557,10 +557,7 @@
             </div>
 
             <div class="col-lg-8">
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                <!-- <div class="g-recaptcha" data-sitekey="6LdOWR4rAAAAAB1Rvr_Z3Z7uaKHPzWaUQj8fjATG"></div>
-                <br> -->
-
+              <form action="forms/contact.php" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                 <div class="row gy-4">
                   <div class="col-md-6">
                     <input type="text" name="name" class="form-control" placeholder="Your Name" required />
@@ -568,7 +565,11 @@
                   <div class="col-md-6">
                     <input type="email" class="form-control" name="email" placeholder="Your Email" required />
                   </div>
-                  <div class="col-md-12">
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control" name="phone" placeholder="Phone Number (e.g. +91 9600 993 995)" pattern="^\+[0-9]{1,3}\s[0-9]{4,14}$" required />
+                    <small class="form-text text-muted">Format: +[Country Code] [Number] (e.g. +91 9600 993 995)</small>
+                  </div>
+                  <div class="col-md-6">
                     <input type="text" class="form-control" name="subject" placeholder="Subject" required />
                   </div>
                   <div class="col-md-12">

@@ -247,4 +247,85 @@
     }
   });
 
+  /**
+   * Easy selector helper function
+   */
+  const select = (el, all = false) => {
+    el = el.trim();
+    if (all) {
+      return [...document.querySelectorAll(el)];
+    } else {
+      return document.querySelector(el);
+    }
+  };
+
+  /**
+   * Easy event listener function
+   */
+  const on = (type, el, listener, all = false) => {
+    let selectEl = select(el, all);
+    if (selectEl) {
+      if (all) {
+        selectEl.forEach((e) => e.addEventListener(type, listener));
+      } else {
+        selectEl.addEventListener(type, listener);
+      }
+    }
+  };
+
+  /**
+   * Form validation
+   */
+  let contactForm = select(".php-email-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let formData = new FormData(this);
+      let phone = formData.get("phone");
+      
+      // Phone number validation
+      const phoneRegex = /^\+[0-9]{1,3}\s[0-9]{4,14}$/;
+      if (!phoneRegex.test(phone)) {
+        let errorMessage = select(".error-message");
+        errorMessage.innerHTML = "Please enter a valid phone number with country code (e.g. +91 9600 993 995)";
+        errorMessage.style.display = "block";
+        return;
+      }
+
+      let loading = select(".loading");
+      let errorMessage = select(".error-message");
+      let sentMessage = select(".sent-message");
+
+      loading.style.display = "block";
+      errorMessage.style.display = "none";
+      sentMessage.style.display = "none";
+
+      fetch(this.action, {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.text();
+          }
+          throw new Error("Network response was not ok");
+        })
+        .then((data) => {
+          loading.style.display = "none";
+          if (data.trim() == "OK") {
+            sentMessage.style.display = "block";
+            this.reset();
+          } else {
+            throw new Error(data ? data : "Form submission failed");
+          }
+        })
+        .catch((error) => {
+          loading.style.display = "none";
+          errorMessage.innerHTML = error.message;
+          errorMessage.style.display = "block";
+        });
+    });
+  }
+
 })();
