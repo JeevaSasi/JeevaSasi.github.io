@@ -226,4 +226,25 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  // Testimonials carousel
+  var testimonialsSwiper = new Swiper('.testimonials-slider', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    touchRatio: 1,
+    grabCursor: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    }
+  });
+
 })();

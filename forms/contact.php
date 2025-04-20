@@ -38,4 +38,81 @@
   $contact->add_message( $_POST['message'], 'Message', 10);
 
   echo $contact->send();
+
+// Check if the request method is POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verify reCAPTCHA
+    $recaptcha_secret = "6LdOWR4rAAAAAKr3bAoMSNOBxabovD8BlNCk73q-";
+    // $recaptcha_secret = "";
+    $recaptcha_response = $_POST['g-recaptcha-response'];
+    
+    $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptcha_secret}&response={$recaptcha_response}");
+    $captcha_success = json_decode($verify);
+    
+    if ($captcha_success->success == false) {
+        // reCAPTCHA verification failed
+        echo "captcha_error";
+        exit;
+    }
+
+    // Get form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    // Recipient email
+    $to = "jeeva@techbylanz.com";
+
+    // Email headers
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+    // Email content
+    $email_content = "
+    <html>
+    <head>
+        <title>New Contact Form Submission</title>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background-color: #f8f9fa; padding: 20px; text-align: center; }
+            .content { padding: 20px; }
+            .footer { background-color: #f8f9fa; padding: 20px; text-align: center; font-size: 12px; }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <h2>New Contact Form Submission</h2>
+            </div>
+            <div class='content'>
+                <p><strong>Name:</strong> $name</p>
+                <p><strong>Email:</strong> $email</p>
+                <p><strong>Subject:</strong> $subject</p>
+                <p><strong>Message:</strong></p>
+                <p>$message</p>
+            </div>
+            <div class='footer'>
+                <p>This email was sent from your portfolio website contact form.</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    ";
+
+    // Send email
+    if (mail($to, $subject, $email_content, $headers)) {
+        // Redirect to thank you page
+        header("Location: ../thank-you.html");
+        exit;
+    } else {
+        echo "error";
+    }
+} else {
+    // If not a POST request, return error
+    echo "error";
+}
 ?>
